@@ -39,6 +39,7 @@ public class UDP : MonoBehaviour
             send("hola");
         }
 
+
         try
         {
             var receivedData = client.Receive(ref epServer);
@@ -52,8 +53,6 @@ public class UDP : MonoBehaviour
             Debug.LogError("error : "+ex.Message);
         }
     }
-
-    
 
     private void send(string text)
     {
