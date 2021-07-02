@@ -54,9 +54,11 @@ public class UDP : MonoBehaviour
         }
     }
 
-    private void send(string text)
+    public void send(string text)
     {
         byte[] send_buffer = Encoding.ASCII.GetBytes(text);
+
+        Debug.LogWarning(send_buffer.Length);
 
         client.Send(send_buffer, send_buffer.Length);
     }
