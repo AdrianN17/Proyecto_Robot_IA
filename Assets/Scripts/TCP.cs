@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -20,7 +17,9 @@ public class TCP : MonoBehaviour
 
     private Thread clientReceiveThread;
 
-    public IPEndPoint epServer;
+    private IPEndPoint epServer;
+
+    public Decisiones decision;
     void Start()
     {
         IPEndPoint epClient = new IPEndPoint(IPAddress.Parse(ipClient), portClient);
@@ -41,26 +40,6 @@ public class TCP : MonoBehaviour
     void Update()
     {
 
-        /*try
-        { 
-            byte[] bArray = new byte[client.ReceiveBufferSize];
-            int bytesRead = client.GetStream().Read(bArray, 0, client.ReceiveBufferSize);
-            Debug.Log("Received : " + Encoding.ASCII.GetString(bArray, 0, bytesRead));
-        }
-        catch(Exception ex)
-        {
-            Debug.LogError(ex.Message);
-        }*/
-
-        /*if (Input.GetKeyDown(KeyCode.A))
-        {
-            send("hola");
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            send("adios");
-        }*/
     }
 
     public void send(string text)
@@ -88,6 +67,8 @@ public class TCP : MonoBehaviour
                     // Convert byte array to string message. 						
                     string serverMessage = Encoding.ASCII.GetString(incommingData);
                     Debug.Log("server message received as: " + serverMessage);
+                    UnityMainThreadDispatcher.Instance().Enqueue(() => decision.tomarDecision(serverMessage));
+                    
                 }
                 
             }

@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public class iaAnalisis
+public class decisionData
 {
-    public string objetivo { get; set; }
-    public int cantidadPersonas { get; set; }
+    public string accion { get; set; }
+    public int cantidad_caras { get; set; }
 }
 
