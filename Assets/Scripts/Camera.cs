@@ -13,6 +13,7 @@ public class Camera : MonoBehaviour
     public float maxTimer;
     public bool val;
     public TCP tcp;
+    public Decisiones decision;
 
 
     void Start()
@@ -38,13 +39,12 @@ public class Camera : MonoBehaviour
         writer.WriteLine(b64Data);
         writer.Close();*/
 
-        robotData ro = new robotData();
-        ro.accion = "reconocimiento";
-        ro.data = b64Data;
 
-        var json = JsonConvert.SerializeObject(ro);
+        decision.rdata.data = b64Data;
+
+        var json = JsonConvert.SerializeObject(decision.rdata);
         tcp.send(json);
-
+        decision.rdata.data = "";
 
         Object.Destroy(texture);
         val = true;

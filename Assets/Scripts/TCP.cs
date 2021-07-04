@@ -48,6 +48,7 @@ public class TCP : MonoBehaviour
         ASCIIEncoding asen = new ASCIIEncoding();
         byte[] ba = asen.GetBytes(text);
         client.GetStream().Write(ba, 0, ba.Length);
+        client.GetStream().Flush();
     }
 
     private void ListenData()
