@@ -19,6 +19,7 @@ public class Camera : MonoBehaviour
     void Start()
     {
         timer = 0;
+        //Screen.SetResolution(1280, 800, false);
     }
 
     IEnumerator RecordFrame()
