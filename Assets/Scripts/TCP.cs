@@ -55,10 +55,11 @@ public class TCP : MonoBehaviour
     {
         try
         {
-            Byte[] bytes = new Byte[1024];
+
             while (true)
-            {			
-                
+            {
+                var bytes = new byte[1024];
+
                 int length;
                 // Read incomming stream into byte arrary. 					
                 while ((length = client.GetStream().Read(bytes, 0, bytes.Length)) != 0)

@@ -797,7 +797,7 @@ GameObject:
   - component: {fileID: 227165706}
   - component: {fileID: 227165709}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: MaquinariaB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -893,6 +893,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tcp: {fileID: 1305873471}
   objetivo_nombre: B
+  dec: {fileID: 402340122}
+  objetivo_condicion: irB
 --- !u!1 &287463109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1040,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1120,7 +1122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402340115}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -37.71, y: 0.6, z: 19.991}
+  m_LocalPosition: {x: -37.71, y: 0.6, z: 1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
@@ -1140,7 +1142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 211481897}
-  maxTimer: 3
+  maxTimer: 5
   val: 1
   tcp: {fileID: 1305873471}
   decision: {fileID: 402340122}
@@ -2023,6 +2025,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tcp: {fileID: 1305873471}
   objetivo_nombre: R
+  dec: {fileID: 402340122}
+  objetivo_condicion: no_abastecido
 --- !u!1 &910876988
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,8 +2188,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.01
+  far clip plane: 100
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -2805,7 +2809,7 @@ GameObject:
   - component: {fileID: 1777553466}
   - component: {fileID: 1777553469}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: MaquinariaA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2901,6 +2905,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tcp: {fileID: 1305873471}
   objetivo_nombre: A
+  dec: {fileID: 402340122}
+  objetivo_condicion: irA
 --- !u!1 &1895068153
 GameObject:
   m_ObjectHideFlags: 0
@@ -3332,7 +3338,7 @@ GameObject:
   - component: {fileID: 1924236955}
   - component: {fileID: 1924236958}
   m_Layer: 0
-  m_Name: Sphere (2)
+  m_Name: MaquinariaC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3428,6 +3434,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tcp: {fileID: 1305873471}
   objetivo_nombre: C
+  dec: {fileID: 402340122}
+  objetivo_condicion: irC
 --- !u!1 &1965193698
 GameObject:
   m_ObjectHideFlags: 0
@@ -3518,7 +3526,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965193698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -38.02, y: 1.93, z: 16.67}
+  m_LocalPosition: {x: -38.02, y: 1.93, z: -36.8}
   m_LocalScale: {x: 1, y: 1, z: -1}
   m_Children: []
   m_Father: {fileID: 0}
